@@ -1,0 +1,48 @@
+http://jsbin.com/juyakaqawe/edit?html,js,output
+
+var Form = React.createClass({
+  
+  firstMethod(e) {
+    const re = /[0-9A-F:]+/g;
+    if (!re.test(e.key)) {
+      e.preventDefault();
+    }
+  },
+
+  secondMethod(e) {
+    const re = /[0-9A-F]+/g;
+    if (!re.test(e.key)) {
+      e.preventDefault();
+    }
+  },
+  
+  thirdMethod(e) {
+    const re = /[0-9a-fA-F -]+/g; //only space, -,number,alphabets
+    if (!re.test(e.key)) {
+      e.preventDefault();
+    }
+  },
+
+  fourthMethod(e) {
+    const re = /[a-fA-F]+/g;
+    if (!re.test(e.key)) {
+      e.preventDefault();
+    }
+  },
+
+  render() {
+    return (
+      <form>
+        <input ref="first" onKeyPress={(e) => this.firstMethod(e)} />
+        <input ref="second" onKeyPress={(e) => this.secondMethod(e)} />
+        <input ref="third" onKeyPress={(e) => this.thirdMethod(e)} />
+        <input ref="fourth" onKeyPress={(e) => this.fourthMethod(e)} />
+      </form>
+    );
+  }
+});
+
+ReactDOM.render(
+  <Form />,
+  document.getElementById('example')
+);
