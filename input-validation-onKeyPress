@@ -1,5 +1,9 @@
 http://jsbin.com/juyakaqawe/edit?html,js,output
 
+var pattern = /^[a-zA-Z0-9!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]*$/
+you can remove any individual character you want to disallow.
+pattern.test(string) . return true if exists else false
+
 var Form = React.createClass({
   
   firstMethod(e) {
